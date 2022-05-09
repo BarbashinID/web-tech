@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Барбашин Илья</title>
+<script src = "jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div>
+	<button class ="left">left</button>
+	<button class ="right">right</button>
+	<button class ="up">up</button>
+	<button class ="down">down</button>
+	</div>
+
+<img class = "rajan" src = "css/rajan_gosling.jpg">
+
+ 	<script type="text/javascript">
+ 	 $('.left').click(function(){
+ 		  $('.rajan').animate({left: "-=100"}, 500)
+ 	
+ 	 });
+ 	 $('.right').click(function(){
+		  $('.rajan').animate({left: "+=100"}, 500)
+	
+	 });
+ 	 $('.up').click(function(){
+		  $('.rajan').animate({top: "-=100"}, 500)
+	
+	 });
+ 	 $('.down').click(function(){
+		  $('.rajan').animate({top: "+=100"}, 500)
+	
+	 });
+	 </script>
+</body>
+</html>		

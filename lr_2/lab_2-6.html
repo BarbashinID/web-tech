@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Барбашин Илья</title>
+<script src = "jquery-3.6.0.js"></script> 
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class = "testbox">
+ <H1> Оценка фотографии </H1><p>
+ <H3>Вопрос: нравится ли вам эта фотография?</H3>
+<img src = "css/rajan_gosling.jpg"> <p>
+ <button id = "like" class = "butt">Нравится</button>  <b class = "stat"></b><p>
+ <button id = "dislike" class = "butt">Не нравится</button> <b class = "stat_2"></b><p><b class = "stat_3"></b>
+</div>
+<script type="text/javascript">
+var a = 0;
+var b = 0;
+
+</script>
+
+<script type="text/javascript">
+$('#like').click(function(){
+a = a + 1;
+var s = document.querySelector('.stat');
+s.innerHTML = ("Количество голосов: " + a);
+var s_3 = document.querySelector('.stat_3');
+s_3.innerHTML = ("Общее количество голосов: " + (a+b) + ": "  + (" " + 100/(a + b)*a + '% - "Нравиться" ')  + (" и " + 100/(a + b)*b + '% - "Не нравиться" '));
+});
+
+$('#dislike').click(function(){
+	b = b + 1;
+	var s_2 = document.querySelector('.stat_2');
+	s_2.innerHTML = ("Количество голосов: " + b);
+	var s_3 = document.querySelector('.stat_3');
+	s_3.innerHTML = ("Общее количество голосов: " + (a+b) + ": "  + (" " + 100/(a + b)*a + '% - "Нравиться" ')  + (" и " + 100/(a + b)*b + '% - "Не нравиться" '));
+});
+ </script>
+ 
+</body>
+</html>		

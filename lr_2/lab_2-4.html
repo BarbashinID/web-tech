@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Барбашин Илья</title>
+<script src = "jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="coords">
+    X: <span class="x"></span><br>
+    Y: <span class="y"></span>
+</div>
+
+<script type="text/javascript">
+	document.querySelector('html').onmousemove = function(event) {
+    event = event || window.event; // кроссбраузерность
+    console.log(event); // вывод в консоль
+    document.querySelector('.x').innerHTML = event.offsetX;
+    document.querySelector('.y').innerHTML = event.offsetY;
+}
+ </script>
+ 
+</body>
+</html>		

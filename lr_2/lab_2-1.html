@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Барбашин Илья</title>
+<script src = "jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class = "style">
+<button class= "refresh">swap</button>
+
+	 <script type="text/javascript">
+	 	
+	$('.refresh').click(function(){
+		
+	  $('.style').each(function(){
+            var rColor='#'+Math.random().toString(16).substr(2,6);
+            $('.style').css('background-color', rColor);
+		
+	});		
+	});		
+	 </script>	
+
+
+</div>
+</body>
+</html>		

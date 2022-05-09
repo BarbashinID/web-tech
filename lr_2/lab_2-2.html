@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Барбашин Илья</title>
+<script src = "jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<p>Ваше имя <input id = "inp" class = "name"></input>  <b class = "par"></b>
+<p> Пароль 
+<input id = "inp1" class = "pass" type = "password"></input> <b class = "par2"></b> <p> Подтверждение пароля
+<input id = "inp2" class = "repass" type = "password"></input> <b class = "par3"></b> <p> Email
+<input id = "inp3" class = "email"></input><b class = "par4"></b><p> Тема сообщения
+<input class = "theme_mess"></input><p> Сообщение
+<input id = "inp4" class = "mess"></input><b class = "par5"></b><p>
+<button class = "send"> Отправить </button>
+<button class = "clear"> Очистить </button>
+<script type="text/javascript">
+var par = document.querySelector('.par');
+var par2 = document.querySelector('.par2');
+var par3 = document.querySelector('.par3');
+var par4 = document.querySelector('.par4');
+var par5 = document.querySelector('.par5');
+</script>	
+ <script type="text/javascript">	
+	$('.clear').click(function(){
+		$('.name').val('');
+		$('.pass').val('');
+		$('.repass').val('');
+		$('.email').val('');
+		$('.theme_mess').val('');
+		$('.mess').val('');	
+		$('input').css('border-color', 'black');
+		par.innerHTML = '';
+		par2.innerHTML = '';
+		par3.innerHTML = '';
+		par4.innerHTML = '';
+		par5.innerHTML = '';
+	});		
+ </script>	 
+  <script type="text/javascript">	
+	 $('.send').click(function(){
+		if ((document.getElementById('inp').value) == ''){
+			$('.name').css('border-color', 'red')
+			
+		    par.innerHTML = ' Введите имя*';
+		}
+			else {
+				$('.name').css('border-color', 'black')
+			    par.innerHTML = '';
+			};
+		if ((document.getElementById('inp1').value.length) < 4){
+			$('.pass').css('border-color', 'red')
+			$('.repass').css('border-color', 'red')
+		
+		    par2.innerHTML = ' Пароль должен содержать не менее 4 символов*';}
+			else {
+				$('.pass').css('border-color', 'black')
+				$('.repass').css('border-color', 'black')
+			    par2.innerHTML = '';
+			};
+			
+		if ((document.getElementById('inp2').value) != (document.getElementById('inp1').value)){
+			$('.repass').css('border-color', 'red')
+		    par3.innerHTML = ' Пароли должны совпадать*';}
+			else {
+				$('.repass').css('border-color', 'black')
+			    par3.innerHTML = '';
+			};
+			
+		if ((document.getElementById('inp3').value.includes("@") == false)){
+			$('.email').css('border-color', 'red')
+		    par4.innerHTML = ' Email должен содержать символ "@"*';}
+			else {
+				$('.email').css('border-color', 'black')
+			    par4.innerHTML = '';
+			};
+		if ((document.getElementById('inp4').value.length) < 10 ){
+			$('.mess').css('border-color', 'red')
+		    par5.innerHTML = ' Сообщение должно содержать не менее 10 символов*';}
+			else {
+				$('.mess').css('border-color', 'black')
+				$('.repass').css('border-color', 'black')
+			    par5.innerHTML = '';
+				
+			};
+	  
+	});		
+ </script>	
+
+</body>
+</html>

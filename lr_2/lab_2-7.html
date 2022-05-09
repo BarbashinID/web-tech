@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Барбашин Илья</title>
+<script src = "jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="calc" >
+<input id = "inpet" class = "inp"></input>
+<button id = "del" class = "del"> << </button>
+<button id = "cle" class = "del"> C </button><br>
+<button id = "1" class = "one">1</button>
+<button id = "2"class = "one">2</button>
+<button id = "3"class = "one">3</button>
+<button id = "plus"class = "one">+</button><br>
+<button id = "4"class = "one">4</button>
+<button id = "5"class = "one">5</button>
+<button id = "6"class = "one">6</button>
+<button id = "minum"class = "one">-</button><br>
+<button id = "7"class = "one">7</button>
+<button id = "8"class = "one">8</button>
+<button id = "9"class = "one">9</button>
+<button id = "mult"class = "one">*</button><br>
+<button id = "0"class = "two">0</button>
+<button id = "point"class = "two">.</button>
+<button id = "divide"class = "two">/</button><br>
+<button id = "eq"class = "three">=</button>
+</div>
+
+<script type="text/javascript">
+$('#1').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "1"
+});
+$('#2').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "2"
+});
+$('#3').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "3"
+});
+$('#4').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "4"
+});
+$('#5').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "5"
+});
+$('#6').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "6"
+});
+$('#7').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "7"
+});
+$('#8').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "8"
+});
+$('#9').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "9"
+});
+$('#0').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "0"
+});
+$('#cle').click(function(){
+	document.getElementById('inpet').value = ""
+});
+$('#del').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value.slice(0, -1);
+});
+$('#plus').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "+"
+});
+$('#minum').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "-"
+});
+$('#mult').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "*"
+});
+$('#divide').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "/"
+});
+$('#point').click(function(){
+	document.getElementById('inpet').value = document.getElementById('inpet').value + "."
+});
+$('#eq').click(function(){
+	document.getElementById('inpet').value = eval(document.getElementById('inpet').value)
+});
+ </script>
+ 
+</body>
+</html>

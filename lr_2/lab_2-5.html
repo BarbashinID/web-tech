@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Барбашин Илья</title>
+<script src = "jquery-3.6.0.js"></script>
+<link rel="stylesheet" href="css/style.css">
+    <style>
+        div {
+          position: absolute;
+          background-color: red;
+          left: 390px;
+          width: 90px;
+          height: 90px;
+          margin: 270px;
+        }
+        </style>
+</head>
+<body>
+ <div class="drag"></div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	let mouseIsPress=false;
+	$(document).mousemove(function(event){
+	if (mouseIsPress==true){
+	 $(".drag").offset({top:event.pageY, left:event.pageX});
+	 }
+	   });
+	 $(".drag").mousedown(function(){ 
+	mouseIsPress=true;
+	});
+	  $(document).mouseup(function() {
+	  mouseIsPress=false;
+	});
+
+	 });
+
+ </script>
+ 
+</body>
+</html>		
