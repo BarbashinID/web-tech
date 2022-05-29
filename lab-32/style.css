@@ -1,0 +1,60 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Open Sans",sans-serif;
+     font-size:16px; 
+}
+
+.colors-container{
+    width: 100%;
+    min-height:100vh;
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.news{
+    color:white;
+    font-size: 100px;
+}
+
+.guestbook{
+    color:white;
+    font-size:70px;
+}
+
+.color{
+    flex:25%;
+    min-height: 220px;
+    background-color: rgb(243, 243, 247) ;
+    transition: .4s linear;
+    cursor:pointer;
+}
+
+.buttonlab3
+{
+    position:fixed;
+    left:610px;
+    width: 200px;
+    font-size: 25px;
+    bottom:30px;
+}
+
+.button
+{
+width:50px;
+height: 50px;
+}
+
+.refresh{
+    position:fixed;
+    top:20px;
+    left:610px;
+    border:none;
+    border-radius: 50%;
+    font-size:150px;
+    outline:none;
+    cursor: pointer;
+    transition: .4s linear;
+}
+
