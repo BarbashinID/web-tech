@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@600&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="JQuery.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset.gen {
+          background-color: black;
+          font-size:24px; 
+          padding:10px; 
+          width:750px;
+        position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+             border-radius: 30px;
+        }
+        button.fin {
+        background-color: blue;
+        color:white;
+        padding:10px;
+        margin: 15px;
+         position: relative;
+        left: 5%;
+        transform: translate(-50%, 0);
+         border-radius: 30px;
+        }
+        
+        fieldset.com {
+          background-image: -moz-linear-gradient( 90deg, rgb(80,62,193) 0%, rgba(80,62,193,0.5) 32%, rgb(80,62,193) 71%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(80,62,193) 0%, rgba(80,62,193,0.5) 32%, rgb(80,62,193) 71%);
+  background-image: -ms-linear-gradient( 90deg, rgb(80,62,193) 0%, rgba(80,62,193,0.5) 32%, rgb(80,62,193) 71%);
+          font-size:16px; 
+          border-radius: 30px;
+          padding:22px; 
+        }
+        
+        fieldset.f {
+background: rgb(35,0,36);
+background: linear-gradient(90deg, rgba(35,0,36,1) 0%, rgba(93,72,142,1) 0%, rgba(255,0,43,1) 100%);
+        margin: 10px;
+
+          font-size:16px; 
+          padding:18px; 
+           border-radius: 30px;
+        }
+        
+        input {
+          margin: 5px;
+        }
+        
+        
+         </style>
+</head>
+<body class = "v" background="111.jpg">
+    <fieldset class="gen">
+        <fieldset class="com">
+        </fieldset>
+        <button id='load' class="fin">Загрузить еще</button>
+        </fieldset>
+   <label class="news">Фильмы с Райаном Гослингом</label><br>
+   <script>
+   $(document).ready(function(){
+    let k=0;
+    var i=0;
+    var tek=0;
+    var ids=0;
+    var n=5;
+
+    $.ajax ({
+        type: "GET",
+        url: "getdata_3.php",
+        data :{ftek:tek,fn:n}
+    }).done(function(data)
+    {
+        
+        const myJSON= JSON.stringify(data);
+        let obj =JSON.parse(data)
+
+        for (var q=0;q<n;q++){
+            $('.com').append("<fieldset class='f' id='f1'> <h2 id=h"+ids+" class='gg'> Заголовок</h2> <p id =p"+ids+"></p> <img class='n' id =img"+ids+" width='700' height='500' alt='1'></fieldset>");
+            $("#h"+ids).text(obj.header[q]);
+            $("#p"+ids).text(obj.wall[q]);
+            $("#img"+ids).prop('src',obj.img[q]);
+            ids++;
+        }
+    });
+$('#load').on('click',function(){
+    tek=tek+n;
+    $.ajax({
+        type: "GET",
+        url:"getdata_3.php",
+        data: {ftek:tek,fn:n}
+    }).done(function(data)
+    {
+        const myJSON =JSON.stringify(data);
+        let obj = JSON.parse(data)
+        for (var q=0; q<n;q++){
+            ids++;
+            if(obj.header[q]!=null){
+                $('.com').append("<fieldset class='f' id='f1'> <h2 id=h"+ids+" class='gg'> Заголовок</h2> <p id =p"+ids+"></p> <img class='n' id =img"+ids+" width='700' height='500' alt='1'></fieldset>");
+                $("#h"+ids).text(obj.header[q]);
+                $("#p"+ids).text(obj.wall[q]);
+                $("#img"+ids).prop('src',obj.img[q]);
+            }else{
+                $("#load").text("Кончилось");
+            }
+        }
+    });
+});
+    });
+
+   </script>
+</body>
+</html>
