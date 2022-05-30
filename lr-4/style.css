@@ -1,0 +1,15 @@
+.content{
+	position: relative;
+	max-width: 50%;
+	left: 420px;
+	top: -300px;
+}
+img{
+	position: relative;
+	height: 300px;
+	width: 400px;
+	border-radius: 20px;
+}
+#tabs{
+	display: inline-block;
+}
